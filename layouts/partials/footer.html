@@ -1,10 +1,32 @@
+<div>
+  <h1 id="more-article">文章分类目录</h1>
+
+  <section id="all-categories">
+    <ul>
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+      <li><a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">#{{ $name }}</a></li>
+    {{ end }}
+  </ul>
+  </section>
+
+  <section id="all-tags">
+    <ul>
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">#{{ $name }}</a></li>
+    {{ end }}
+  </ul>
+  </section>
+</div>
+
 </main>
     <footer>
         <h6>{{ .Site.Copyright | markdownify }} | 
             Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="{{.Site.BaseURL}}index.xml">Subscribe</a></h6>
+            <a href="{{.Site.BaseURL}}index.xml">Subscribe</a> | 
+            <a href="https://analytics.google.com/analytics/"><i class="fa fa-google fa-sm" aria-hidden="true"></i></a></h6>
     </footer>
 </div>
+
 <script src="{{ "js/scripts.js" | relURL }}"></script>
 </body>
 

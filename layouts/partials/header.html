@@ -6,16 +6,32 @@
   <title>{{ .Site.Title }}</title>
   {{ partial "meta" . }}
   {{ partial "header_includes" . -}}
+  {{- template "_internal/google_analytics_async.html" . -}}
 </head>
 
 <body>
   <div id="container">
     <header>
-      <h1>
+      <h1 class="no-border">
                 <a href="{{ relURL "/" }}">{{ .Site.Title | markdownify }}</a>
+                <div class="google-search">
+  <script>
+  (function() {
+    var cx = '005364010561184828273:laandzjdlf4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+  </div>
             </h1>
 
-      <ul id="social-media">
+
+      <ul id="social-media" class="no-border">
         {{ if .Site.Author.twitter }}
         <li><a href="https://twitter.com/{{ .Site.Author.twitter }}"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
         {{ end }} {{ if .Site.Author.linkedin }}
@@ -30,7 +46,9 @@
         <li><a href="https://instagram.com/{{ .Site.Author.instagram }}"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
         {{ end }} {{ if .Site.Author.email }}
         <li><a href="mailto:{{ .Site.Author.email }}"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-        {{ end }}
+        {{ end }} {{ if .Site.Author.weibo }}
+        <li><a href="https://weibo.com/u/{{ .Site.Author.weibo }}"><i class="fa fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+        {{ end }}     
       </ul>
       {{ with .Site.Params.tagline }}
       <p><em>{{ . | markdownify }}</em></p>

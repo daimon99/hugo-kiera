@@ -1,14 +1,88 @@
 article a {
-  border-bottom:1px dashed #111;
-  text-decoration:none;
   color: mediumslateblue;
 }
+
+#page-nav ul {
+  display: block;
+}
+
+#more-article {
+  margin-top: 60px;
+  font-size: 18px;
+  color: #666;
+}
+
+#all-categories ul,
+#all-tags ul {
+  line-height: 2;
+}
+
+#all-categories ul li,
+#all-tags ul li {
+  list-style: none;
+  display: inline;
+  padding-right: 5px;
+}
+
+footer h6 {
+  color: #666;
+}
+
+#main article {
+  margin-bottom: 40px;
+}
+
+.comments-block {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.comments-block button {
+  padding: 10px;
+}
+
+/* 引用的样式 */
+#container main article blockquote pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#home a {
+  color: black;
+}
+
+.no-border a {
+  border: none !important;
+}
+
+li pre code {
+  background-color: transparent !important;
+}
+
+.google-search {
+  float: right;
+  width: 320px;
+  line-height: 1.7rem;
+}
+
+@media (max-width: 800px) {
+  .google-search {
+    float: none;
+    width: 100%;
+    margin-top: -10px;
+  } 
+}
+
+/*以上是自定义的样式部分*/
 
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: "Roboto Slab", serif;
+  font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+  /*font-family: "Microsoft YaHei", "Roboto Slab", serif;*/
   color: #333333;
 }
 
@@ -20,6 +94,10 @@ h5,
 h6,
 time {
   font-family: "Ruda", sans-serif;
+  font-weight: 700;
+  /*margin-bottom: 14px;*/
+  line-height: 1.8em;
+  /*color: steelblue;*/
 }
 
 #container {
@@ -101,7 +179,7 @@ time {
 #container main {
   flex: 1 0 0;
   line-height: 1.5;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #container main section#home ul {
@@ -158,16 +236,20 @@ time {
   padding: 0.8em;
   font-size: 0.9em;
   box-shadow: 0 -1px 0 #bbbbbb inset;
+  line-height: 1;
 }
 
 #container main article pre code {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
+#container main article li code,
 #container main article p code {
   padding: 0.2em;
-  background-color: #ffcccc;
-  font-size: 0.9em;
+  /*background-color: #ffcccc;*/
+  background-color: rgba(27,31,35,.06);
+  font-size: 0.8em;
+  font-style: italic;
 }
 
 #container main article p kbd {
@@ -218,6 +300,7 @@ time {
 
 a {
   color: #666666;
+  border-bottom:1px dashed #111;
   text-decoration: none;
 }
 
