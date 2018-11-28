@@ -1,7 +1,8 @@
 +++
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
-draft = falase
+lastmod = {{ .Date }}
+draft = false
 tags = [ ]
 categories = [ '学习笔记' ]
 +++
